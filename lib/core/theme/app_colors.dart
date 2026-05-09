@@ -1,79 +1,209 @@
 import 'package:flutter/material.dart';
 
-/// D2D International — Green Brand Palette
-/// Replace old purple (0xFF667EEA / 0xFF764BA2) with these everywhere.
+/// D2D International — Premium Soft Green Theme
 class AppColors {
+
   AppColors._();
 
-  // ── Primary green gradient ─────────────────────────────────
-  static const Color green1 = Color(0xFF2EBD52); // bright brand green
-  static const Color green2 = Color(0xFF1A8A3A); // deep brand green
+  // ── Primary Brand Greens ──────────────────────────────────
+  static const Color green1 =
+  Color(0xFF34C759);
 
-  // ── Backgrounds ────────────────────────────────────────────
-  static const Color bg       = Color(0xFF070F09); // deepest dark bg
-  static const Color bgCard   = Color(0xFF0D1F11); // card bg tint
+  static const Color green2 =
+  Color(0xFF1FA34A);
 
-  // ── Glass / border helpers ─────────────────────────────────
-  static const Color glass       = Color(0x0F2EBD52); // green-tinted glass
-  static const Color glassBorder = Color(0x2E2EBD52); // green-tinted border
+  // ── Softer Modern Backgrounds ─────────────────────────────
+  static const Color bg =
+  Color(0xFF111827);
 
-  // ── Accent colours (unchanged — still work on dark green bg)
-  static const Color accentTeal = Color(0xFF38EF7D); // active-dot / success
-  static const Color accentRed  = Color(0xFFFF6B6B); // error / inactive
-  static const Color accentAmber = Color(0xFFF0A500); // Meal Punch card
-  static const Color accentBlue  = Color(0xFF0EA5E9); // Inventory card
-  static const Color accentPurple = Color(0xFFA855F7); // Reports card
+  static const Color bgCard =
+  Color(0xFF18212F);
 
-  // ── Text ───────────────────────────────────────────────────
-  static const Color textPrimary   = Colors.white;
-  static const Color textSecondary = Color(0x8CFFFFFF); // 55 % white
-  static const Color textHint      = Color(0x47FFFFFF); // 28 % white
+  static const Color card2 =
+  Color(0xFF1E293B);
 
-  // ── Gradient helpers ───────────────────────────────────────
-  static const LinearGradient primaryGradient = LinearGradient(
-    colors: [green1, green2],
+  // ── Glass / Borders ───────────────────────────────────────
+  static const Color glass =
+  Color(0x1434C759);
+
+  static const Color glassBorder =
+  Color(0x2234C759);
+
+  // ── Accent Colours ────────────────────────────────────────
+  static const Color accentTeal =
+  Color(0xFF4ADE80);
+
+  static const Color accentRed =
+  Color(0xFFFF6B6B);
+
+  static const Color accentAmber =
+  Color(0xFFF59E0B);
+
+  static const Color accentBlue =
+  Color(0xFF38BDF8);
+
+  static const Color accentPurple =
+  Color(0xFFC084FC);
+
+  // ── Text ──────────────────────────────────────────────────
+  static const Color textPrimary =
+      Colors.white;
+
+  static const Color textSecondary =
+  Color(0xB3FFFFFF);
+
+  static const Color textHint =
+  Color(0x66FFFFFF);
+
+  // ── Primary Gradients ─────────────────────────────────────
+  static const LinearGradient
+  primaryGradient = LinearGradient(
+
+    colors: [
+      green1,
+      green2,
+    ],
+
     begin: Alignment.topLeft,
+
     end: Alignment.bottomRight,
   );
 
-  static LinearGradient primaryGradientH = const LinearGradient(
-    colors: [green1, green2],
+  static const LinearGradient
+  primaryGradientH = LinearGradient(
+
+    colors: [
+      green1,
+      green2,
+    ],
+
     begin: Alignment.centerLeft,
+
     end: Alignment.centerRight,
   );
 
-  static LinearGradient disabledGradient = LinearGradient(
-    colors: [green1.withOpacity(0.5), green2.withOpacity(0.5)],
+  static LinearGradient
+  disabledGradient = LinearGradient(
+
+    colors: [
+
+      green1.withOpacity(0.45),
+
+      green2.withOpacity(0.45),
+    ],
+
     begin: Alignment.centerLeft,
+
     end: Alignment.centerRight,
   );
 
-  // ── Box-shadow for green glow ─────────────────────────────
-  static List<BoxShadow> greenGlow({double blur = 20, Offset offset = const Offset(0, 8)}) => [
+  // ── Premium Green Glow ────────────────────────────────────
+  static List<BoxShadow> greenGlow({
+
+    double blur = 24,
+
+    Offset offset =
+    const Offset(0, 10),
+
+  }) => [
+
     BoxShadow(
-      color: green1.withOpacity(0.40),
+
+      color:
+      green1.withOpacity(0.28),
+
       blurRadius: blur,
+
       offset: offset,
     ),
   ];
 
-  // ── Input decoration (dark glass style) ───────────────────
-  static InputDecoration darkInput(String label, IconData icon) {
+  // ── Soft Card Shadow ──────────────────────────────────────
+  static List<BoxShadow> softShadow = [
+
+    BoxShadow(
+
+      color:
+      Colors.black.withOpacity(0.22),
+
+      blurRadius: 18,
+
+      offset: const Offset(0, 10),
+    ),
+  ];
+
+  // ── Dark Glass Input Style ────────────────────────────────
+  static InputDecoration darkInput(
+      String label,
+      IconData icon,
+      ) {
+
     return InputDecoration(
+
       labelText: label,
-      labelStyle: TextStyle(color: Colors.white.withOpacity(0.50), fontSize: 13),
-      prefixIcon: Icon(icon, color: Colors.white.withOpacity(0.40), size: 20),
+
+      labelStyle: TextStyle(
+
+        color:
+        Colors.white.withOpacity(
+          0.55,
+        ),
+
+        fontSize: 13,
+      ),
+
+      prefixIcon: Icon(
+
+        icon,
+
+        color:
+        Colors.white.withOpacity(
+          0.45,
+        ),
+
+        size: 20,
+      ),
+
       filled: true,
-      fillColor: Colors.white.withOpacity(0.06),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
-        borderSide: BorderSide(color: Colors.white.withOpacity(0.10)),
+
+      fillColor:
+      Colors.white.withOpacity(
+        0.05,
       ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(14),
-        borderSide: const BorderSide(color: green1, width: 1.5),
+
+      enabledBorder:
+      OutlineInputBorder(
+
+        borderRadius:
+        BorderRadius.circular(16),
+
+        borderSide: BorderSide(
+
+          color:
+          Colors.white.withOpacity(
+            0.08,
+          ),
+        ),
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+
+      focusedBorder:
+      OutlineInputBorder(
+
+        borderRadius:
+        BorderRadius.circular(16),
+
+        borderSide:
+        const BorderSide(
+          color: green1,
+          width: 1.4,
+        ),
+      ),
+
+      contentPadding:
+      const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 15,
+      ),
     );
   }
 }

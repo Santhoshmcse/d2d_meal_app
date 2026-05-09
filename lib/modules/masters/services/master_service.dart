@@ -8,6 +8,11 @@ import 'package:d2d_meal_app/modules/masters/models/designation_model.dart';
 
 import 'package:d2d_meal_app/modules/masters/models/location_model.dart';
 
+import 'package:d2d_meal_app/modules/masters/models/gst_master_model.dart';
+
+import 'package:dio/dio.dart';
+
+import '../../../core/constants/api_constants.dart';
 class MasterService {
 
   /// Departments
@@ -93,4 +98,19 @@ class MasterService {
 
     ).toList();
   }
+  static Future<List<GstMasterModel>>
+  getGstRates() async {
+
+    final response =
+    await ApiService.dio.get(
+      ApiConstants.gstRates,
+    );
+
+    return (response.data as List)
+        .map(
+          (e) => GstMasterModel.fromJson(e),
+    )
+        .toList();
+  }
+
 }

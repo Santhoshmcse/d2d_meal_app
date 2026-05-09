@@ -18,4 +18,6 @@ class ApiConstants {
   static const String designations = '/api/v1/designations';
 
   static const String locations = '/api/locations';
+
+  static const String gstRates = '/api/masters?type=GST_RATE';
 }
